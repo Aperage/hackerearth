@@ -1,8 +1,6 @@
 <?php
 
 /*
-
-
 echo "<pre>"; print_r($); echo "</pre>"; die();
 
 1 0 0 0 0 0 2
@@ -18,7 +16,6 @@ echo "<pre>"; print_r($); echo "</pre>"; die();
 2 2
 
 */
-
 
 define('ROWS', 6);
 define('COLS', 7);
@@ -87,11 +84,20 @@ class MyGrid {
         $output []= new Move(0,1);
 
         return $output;
-    }
+    } 
+
+    public function getNeighboursForStone($p = false) {
+        $output = array();
+        
+        // spreading moves
 
 
+        // jumping moves
 
-   
+        $output []= new Move(0,1);
+
+        return $output;
+    }   
 }
 
 class HexxagonBot {
