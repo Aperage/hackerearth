@@ -21,6 +21,8 @@ define('ROWS', 6);
 define('COLS', 7);
 
 
+
+
 class Move {
     public $x;
     public $y;
@@ -29,6 +31,9 @@ class Move {
         $this->y = $y;
     }
 }
+
+
+
 
 class Stone {
     public $position;
@@ -47,6 +52,7 @@ class Stone {
 		echo $this->position->x . " " . $this->position->y . "\n" . $this->move->x . " " . $this->move->y;
 	}
 }
+
 
 
 class MyGrid {
@@ -100,6 +106,9 @@ class MyGrid {
     }   
 }
 
+
+
+
 class HexxagonBot {
 
     public $grid;
@@ -147,6 +156,7 @@ class HexxagonBot {
 
 
 
+
 function initGridFromInput() {
     $grid = array();
     for($i=0; $i<ROWS; $i++) {
@@ -175,7 +185,5 @@ function start() {
 	$bestStone = $bot->getBestMove();
 	$bestStone->printHexxagon();
 }
-
-
 
 start();
