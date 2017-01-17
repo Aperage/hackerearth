@@ -169,16 +169,22 @@ PII findPossibleMove(int grid[MAXR][MAXC], PII current)
 
 int main(int argc, char* argv[])
 {
+	// premier parametre les input, avec 3 params+, le param2 on ecrit le output.
 	if(argc == 2 or argc == 3) freopen(argv[1], "r", stdin);
 	if(argc == 3) freopen(argv[2], "w", stdout);
 	ios::sync_with_stdio(false);
+	
+
+	// build grid
 	int grid[MAXR][MAXC];
 	int move_count, playerId;
 	REP(i, 0, MAXR, 1)
 		REP(j, 0, MAXC, 1)
 			cin >> grid[i][j];
 
+	// currentPlayer
 	cin >> move_count >> playerId;
+	
 	VPII possibleStones = findPossibleStones(grid, playerId);
 	srand(time(NULL));
     int id = rand() % possibleStones.size();
