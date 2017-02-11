@@ -21,14 +21,25 @@ define('ROWS', 6);
 define('COLS', 7);
 
 
-
-
-class Move {
-    public $x;
+class Coord {
+	public $x;
     public $y;
     public function __construct($x = -1, $y = -1) {
         $this->x = $x;
         $this->y = $y;
+    }
+
+    public function print() {
+    	echo $this->x . " " . $this->y
+    }
+}
+
+
+class Move {
+    public $coord;
+
+    public function __construct($x = -1, $y = -1) {
+        $this->coord = new Coord($x, $y);
     }
 }
 
@@ -49,7 +60,7 @@ class Stone {
     }
 
     public function printHexxagon() {
-		echo $this->position->x . " " . $this->position->y . "\n" . $this->move->x . " " . $this->move->y;
+		echo $this->position->print(). "\n" . $this->move->print();
 	}
 }
 
@@ -87,18 +98,7 @@ class MyGrid {
 
         // jumping moves
 
-        $output []= new Move(0,1);
-
-        return $output;
-    } 
-
-    public function getNeighboursForStone($p = false) {
-        $output = array();
         
-        // spreading moves
-
-
-        // jumping moves
 
         $output []= new Move(0,1);
 
